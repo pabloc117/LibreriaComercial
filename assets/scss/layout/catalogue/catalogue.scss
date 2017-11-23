@@ -1,0 +1,54 @@
+@import "../../mixins";
+@import "../../breakpoints";
+
+
+.block{
+    width: 100%;
+    float: left;
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 800px;
+    }
+    @include tablet {
+        .container {
+            max-width: 560px;
+        }
+    }
+
+    @include mobile {
+        .container {
+            max-width: 345px;
+        }
+    }
+
+    @include mobile-small {
+        .container {
+            width: 290px;
+        }
+    }
+}
+
+.catalogue{
+    .actionsCatalogue{
+        margin: 40px 0px;
+        float: left;
+        width: 100%;
+        position: relative;
+        @include display-flex();
+        .searcher{
+            @include flex(1);
+            text-align: left;
+        }
+    }
+    @include all-mobile {
+        .actionsCatalogue{
+            margin: 25px 0px;
+            .buttonItem.add{
+                position: absolute;
+                right: 0px;
+            }
+        }
+    }
+}

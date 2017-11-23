@@ -1,0 +1,29 @@
+<div class="searcher">
+    <div class="searchBy">
+        Buscar por:
+        <select ng-click="displaySearch = true; restoreSearch();" ng-model="searchType"
+                ng-options="key as key for (key, value) in searchParams">
+        </select>
+    </div>
+    <div class="advancedSearch" ng-class="{'showAnim': (displaySearch && searchType != '')}" ng-show="displaySearch && searchType != ''">
+        <div class="searchInputs" ng-switch on="searchType">
+            <input ng-switch-when="title" ng-model="searchParams.title"
+                   placeholder="Busqueda por titulo" ng-change="searchBook();"/>
+            <input ng-switch-when="author|theme" ng-model="searchParams.author"
+                   placeholder="Busqueda por autor" ng-switch-when-separator="|" ng-change="searchBook();"/>
+            <input ng-switch-when="ISBIN" ng-model="searchParams.isbin"
+                   placeholder="Busqueda por ISBIN" ng-change="searchBook();"/>
+            <div ng-switch-when="author|theme" ng-switch-when-separator="|" class="inputGroup small">
+                Selecciona una tematica:
+                <select ng-model="searchParams.theme" ng-change="searchBook()" ng-options="theme for theme in themes"></select>
+            </div>
+            <div ng-switch-when="user" class="inputGroup small">
+                Selecciona un usuario:
+                <select ng-change="searchUser()" ng-model="searchParams.user" ng-options="user for user in users"></select>
+            </div>
+        </div>
+        <div class="actions">
+            <button text="Cerrar" classname="cancel" ng-click="displaySearch = false; closeSearch()"></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{
+  "name": "libraryApp",
+  "version": "0.0.0",
+  "description": "libraryApp package",
+  "main": "/scripts/app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beatrizruizmatias/library-app.git"
+  },
+  "keywords": [
+    "angular",
+    "gulp",
+    "libraryApp"
+  ],
+  "author": "Beatriz Ruiz Matias",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/beatrizruizmatias/library-app/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-util": "~3.0.8",
+    "gulp-sass": "~3.1.0",
+    "gulp-jshint": "~2.0.4",
+    "jshint": "~2.9.4",
+    "gulp-uglify": "~2.0.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-concat": "~2.6.1",
+    "karma-mocha": "~1.3.0",
+    "mocha": "~3.2.0",
+    "sinon-chai": "~2.8.0",
+    "chai": "~3.5.0",
+    "sinon": "~1.17.7",
+    "karma-sinon-chai": "~1.2.4",
+    "karma-coverage": "~1.1.1",
+    "karma": "~1.3.0",
+    "karma-phantomjs-launcher": "~1.0.2",
+    "karma-chai-plugins": "~0.8.0"
+  }
+}

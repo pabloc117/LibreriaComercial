@@ -1,0 +1,70 @@
+@import "../mixins";
+@import "../breakpoints";
+
+.footer{
+  width: 100%;
+  float: left;
+  background: $carto;
+  margin-top: 10px;
+  padding: 20px;
+  @include box-shadow(0 -1px 4px 0 rgba(0,0,0,0.12));
+  a{
+    text-decoration: none;
+    color: $gray;
+    &:hover{
+      color: $gray;
+      text-decoration: underline;
+    }
+  }
+  .footer-left{
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    .title{
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .text{
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+  .footer-right{
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    h2{
+      font-size: 16px;
+    }
+    .icons{
+      margin-top: 10px;
+      a{
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        display: inline-block;
+        &.github{
+          background-image: icon(github, $black);
+        }
+        &.linkedin{
+          background-image: icon(linkedin, $linkedin);
+        }
+        &.email{
+          background-image: url("../../images/gmail.svg")
+        }
+      }
+    }
+  }
+  @include all-mobile{
+    .footer-left{
+      width:100%;
+      margin-top: 20px;
+      display: block;
+    }
+    .footer-right {
+      width:100%;
+      display: block;
+    }
+  }
+}

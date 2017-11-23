@@ -1,0 +1,11 @@
+@import '../breakpoints';
+
+h1{
+  font-size: 32px;
+  @include tablet{
+    font-size: 26px;
+  }
+  @include all-mobile{
+    font-size: 20px;
+  }
+}

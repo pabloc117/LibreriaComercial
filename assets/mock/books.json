@@ -1,0 +1,194 @@
+{
+  "books": [
+    {
+      "title": "Cien años de soledad",
+      "author": "Gabriel García Márquez",
+      "metadata": "L978-3-598-21500-1novela                          000000221184000",
+      "users": [
+        {
+          "id": 1,
+          "name": "Isidro Pérez"
+        },
+        {
+          "id": 2,
+          "name": "José Manuel Santos"
+        },
+        {
+          "id": 3,
+          "name": "Trinidad Alonso"
+        }
+      ]
+    },
+    {
+      "title": "Las Aventuras de Huckleberry Finn",
+      "author": "Mark Twain",
+      "metadata": "L978-3-598-21501-8aventura                        000000477619200",
+      "users": [
+        {
+          "id": 4,
+          "name": "Jose Miguel Sanchez"
+        },
+        {
+          "id": 5,
+          "name": "Beatriz Reyes"
+        },
+        {
+          "id": 6,
+          "name": "Rosario Garcia"
+        }
+      ]
+    },
+    {
+      "title": "El Conde de Montecristo",
+      "author": "Alexandre Dumas",
+      "metadata": "L978-3-598-21502-5aventura                        000000608860800",
+      "users": [
+        {
+          "id": 6,
+          "name": "Rosario Garcia"
+        },
+        {
+          "id": 1,
+          "name": "Isidro Pérez"
+        },
+        {
+          "id": 4,
+          "name": "Jose Miguel Sanchez"
+        }
+      ]
+    },
+    {
+      "title": "El señor de los anillos",
+      "author": "John Ronald Reuel Tolkien",
+      "metadata": "L978-3-598-21503-2fantasía                        000000242870400",
+      "users": [
+        {
+          "id": 5,
+          "name": "Beatriz Reyes"
+        },
+        {
+          "id": 2,
+          "name": "José Manuel Santos"
+        },
+        {
+          "id": 3,
+          "name": "Trinidad Alonso"
+        }
+      ]
+    },
+    {
+      "title": "Drácula",
+      "author": "Bram Stoker",
+      "metadata": "L978-3-598-21504-9terror                          000000242870400",
+      "users": [
+        {
+          "id": 7,
+          "name": "Vanesa Castro"
+        },
+        {
+          "id": 2,
+          "name": "José Manuel Santos"
+        },
+        {
+          "id": 6,
+          "name": "Rosario Garcia"
+        }
+      ]
+    },
+    {
+      "title": "Orgullo y prejuicio",
+      "author": "Jane Austen",
+      "metadata": "L978-3-598-21505-6amor                            000000699148800",
+      "users": [
+        {
+          "id": 4,
+          "name": "Jose Miguel Sanchez"
+        },
+        {
+          "id": 8,
+          "name": "Julio Navarro"
+        },
+        {
+          "id": 2,
+          "name": "José Manuel Santos"
+        }
+      ]
+    },
+    {
+      "title": "El exorcista",
+      "author": "William Peter Blatty",
+      "metadata": "L978-3-598-21506-3terror                          000000961545600",
+      "users": [
+        {
+          "id": 1,
+          "name": "Isidro Pérez"
+        },
+        {
+          "id": 2,
+          "name": "José Manuel Santos"
+        },
+        {
+          "id": 7,
+          "name": "Vanesa Castro"
+        }
+      ]
+    },
+    {
+      "title": "El resplandor",
+      "author": "Stephen King",
+      "metadata": "L978-3-598-21507-0terror                          000000814838400",
+      "users": [
+        {
+          "id": 1,
+          "name": "Isidro Pérez"
+        },
+        {
+          "id": 8,
+          "name": "Julio Navarro"
+        },
+        {
+          "id": 3,
+          "name": "Trinidad Alonso"
+        }
+      ]
+    },
+    {
+      "title": "Hamlet",
+      "author": "William Shakespeare",
+      "metadata": "L978-3-598-21508-7aventura                        000001002672000",
+      "users": [
+        {
+          "id": 1,
+          "name": "Isidro Pérez"
+        },
+        {
+          "id": 4,
+          "name": "Jose Miguel Sanchez"
+        },
+        {
+          "id": 3,
+          "name": "Trinidad Alonso"
+        }
+      ]
+    },
+    {
+      "title": "El Principito",
+      "author": "Antoine de Saint-Exupéry",
+      "metadata": "L978-3-598-21509-4infantil                        000001443657600",
+      "users": [
+        {
+          "id": 1,
+          "name": "Isidro Pérez"
+        },
+        {
+          "id": 5,
+          "name": "Beatriz Reyes"
+        },
+        {
+          "id": 2,
+          "name": "José Manuel Santos"
+        }
+      ]
+    }
+  ]
+}

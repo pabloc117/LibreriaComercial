@@ -1,0 +1,47 @@
+<div class="bookItem" ng-class="{'edited': book.edited, 'saved':book.saved, 'users' : seeUsers}"
+     ng-show="book.display">
+    <div class="bookImage"
+         style="background-image:url('assets/images/{{ book.title | lowercase | searchReplace:' ':'_' }}.jpg')"></div>
+    <div class="bookContent">
+        <div class="bookInfo front">
+            <div class="inputGroup big">
+                <div class="label" ng-hide="editing"> {{ book.title }}</div>
+                <input ng-change="book.edited = true; book.saved = false" ng-show="editing" ng-model="book.title" />
+            </div>
+            <div class="inputGroup medium">
+                <div class="label" ng-hide="editing"> {{ book.author }}</div>
+                <input ng-change="book.edited = true; book.saved = false" ng-show="editing" ng-model="book.author" />
+            </div>
+            <div class="inputGroup small">
+                <div class="label" ng-hide="editing"> Publication date: {{ book.date | date:'MM/dd/yyyy' }}</div>
+                <input ng-change="book.edited = true; book.saved = false" ng-show="editing" ng-model="book.date" type="date"/>
+            </div>
+            <div class="inputGroup small">
+                <div class="label" ng-hide="editing"> {{ book.isbin }}</div>
+                <input ng-change="book.edited = true; book.saved = false" ng-show="editing" ng-model="book.isbin"/>
+            </div>
+            <div class="inputGroup small theme">
+                <div class="label" ng-hide="editing">
+                    <div class="icon icon_base" ng-class="book.theme | removeAccents"></div>
+                    {{ book.theme | capitalize }}
+                </div>
+                <select ng-change="book.edited = true; book.saved = false" ng-show="editing" ng-model="book.theme"
+                        class="theme">
+                    <option ng-repeat="theme in themes" selected="{{ book.theme == theme }}">{{theme}}</option>
+                </select>
+            </div>
+
+            <div id="errorMessage" class="errorMessage" ng-show="!book.valid && !book.saved"></div>
+        </div>
+        <div class="bookUsers backFace " ng-show="seeUsers">
+            <user ng-repeat="user in book.users"></user>
+        </div>
+    </div>
+    <div class="bookActions">
+        <div class="edit icon_base" ng-hide="editing" ng-click="editing = !editing;"></div>
+        <div class="save icon_base" ng-show="editing"
+             ng-click="editing = saveBook(book)"></div>
+        <div class="delete icon_base" ng-click="deleteBook(book, $index)"></div>
+        <div class="user icon_base" ng-click="seeUsers = !seeUsers"></div>
+    </div>
+</div>

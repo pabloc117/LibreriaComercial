@@ -1,0 +1,56 @@
+@import "../mixins";
+@import "../breakpoints";
+
+.buttonItem {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 135%;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include rounded(3px);
+    @include transition(all 0.3s ease-in-out);
+    &.add {
+        background-color: $blue;
+        color: $white;
+        .icon {
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-image: icon(add, $white);
+        }
+        &:hover {
+            background-color: rgba($blue, 0.7);
+        }
+    }
+    &.cancel {
+        background-color: $light-gray;
+        color: $white;
+        &:hover {
+            background-color: rgba($light-gray, 0.7);
+        }
+    }
+    &.accept {
+        background-color: $green;
+        color: $white;
+        &:hover {
+            background-color: rgba($green, 0.7);
+        }
+    }
+    @include all-mobile {
+        &.add {
+            padding-left: 10px;
+            padding-right: 10px;
+            .icon {
+                margin-right: 0px;
+            }
+            .text {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import "mixins";
+
+$infinite: 860px;
+$mobile: 600px;
+$mobile-small: 375px;
+
+@mixin infinite {
+    @media (min-width: #{$infinite}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile + 1px}) and (max-width: #{$infinite - 1px}) {
+        @content;
+    }
+}
+
+@mixin all-mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: #{$mobile-small + 1px}) and (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin mobile-small {
+    @media (max-width: #{$mobile-small}) {
+        @content;
+    }
+}

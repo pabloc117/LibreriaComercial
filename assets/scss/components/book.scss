@@ -1,0 +1,233 @@
+@import "../mixins";
+@import "../breakpoints";
+
+.bookItem {
+    float: left;
+    width: 800px;
+    height: 160px;
+    z-index: 1;
+    margin-bottom: 20px;
+    position: relative;
+    padding-right: 1px;
+    background-color: $white;
+    -webkit-perspective: 1000px;
+    @include display-flex();
+    @include box-shadow(0 2px 4px 0 rgba($black, 0.12));
+    @include rounded(3px);
+    @include opacity(0);
+    @include transition(opacity .5s cubic-bezier(.4, .85, .49, .99) .4s, transform .5s cubic-bezier(.4, .85, .49, .99) .4s);
+    @include animation(intro-to-detail .3s linear alternate forwards);
+    @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+            @include animation-delay(#{$i * 0.2}s);
+        }
+    }
+    &:hover {
+        @include transform(translate3d(0, 0, 0) translateY(0, -6px));
+    }
+    &.edited {
+        @include box-shadow(0 2px 4px 0 rgba($blue, 0.6));
+    }
+    &.saved {
+        @include box-shadow(0 2px 4px 0 rgba($green, 0.6));
+    }
+    &.users .bookContent {
+        -webkit-transform: rotateX(-180deg);
+    }
+    .bookImage {
+        background-color: $carto;
+        z-index: 1;
+        @include box-shadow(2px 2px 4px 0 rgba($black, 0.12));
+        cursor: pointer;
+        float: left;
+        width: 115px;
+        height: 170px;
+        top: -5px;
+        position: relative;
+        @include rounded(3px);
+        @include cover-background();
+    }
+    .bookContent {
+        transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        position: relative;
+        height: 100%;
+        width: calc(100% - 110px);
+        text-align: left;
+        .bookInfo {
+            @include flex(1);
+            float: left;
+            height: 100%;
+            width: 100%;
+            margin: auto 0;
+            display: inline-block;
+            padding: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            -webkit-backface-visibility: hidden;
+            .inputGroup {
+                margin-bottom: 10px;
+                .label{
+                    padding-right: 100px;
+                }
+                &.theme {
+                    .label{
+                        padding-right: 0px;
+                    }
+                    position: absolute;
+                    bottom: 17px;
+                    right: 10px;
+                    float: left;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .bookUsers {
+            padding: 20px;
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            -webkit-transform: rotateX(180deg);
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-backface-visibility: hidden;
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+                padding-top: 10px;
+                @include rounded(100px);
+                background-color: rgba($carto, 0.5);
+                zoom: 1;
+            }
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px transparent;
+            }
+        }
+    }
+    .bookActions {
+        float: left;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        color: $gray;
+        font-size: 14px;
+        div {
+            float: left;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .user {
+            background-image: icon(user, $gray);
+            &:hover {
+                background-image: icon(user, $carto);
+            }
+        }
+        .edit {
+            background-image: icon(edit, $gray);
+            &:hover {
+                background-image: icon(edit, $carto);
+            }
+        }
+        .save {
+            background-image: icon(save, $gray);
+            &:hover {
+                background-image: icon(save, $carto);
+            }
+        }
+        .delete {
+            background-image: icon(delete, $gray);
+            &:hover {
+                background-image: icon(delete, $carto);
+            }
+        }
+    }
+    .errorMessage{
+        font-size: 10px;
+        color: $red;
+        position: absolute;
+        bottom: 10px;
+    }
+    @include tablet {
+        width: 560px;
+        .bookContent {
+            .bookInfo {;
+                .inputGroup {
+                    input{
+                        width: 290px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include mobile {
+        width: 345px;
+    }
+
+    @include mobile-small {
+        width: 290px;
+    }
+
+    @include all-mobile {
+        .bookImage {
+            width: 90px;
+            height: 170px;
+        }
+        .bookContent {
+            width: calc(100% - 90px);
+            .bookInfo {
+                padding: 10px;
+                .inputGroup {
+                    margin-bottom: 10px;
+                    .label{
+                        padding-right: 0px;
+                    }
+                    &.theme {
+                        bottom: 0px;
+                        right: 0px;
+                    }
+
+                    input, select{
+                        width: 100%;
+                    }
+                }
+            }
+            .bookUsers{
+                padding: 10px;
+            }
+        }
+        .bookActions {
+            bottom: 2px;
+            left: 100px;
+            top:inherit;
+            div {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .errorMessage{
+            top: 0;
+            bottom: inherit;
+        }
+    }
+}
+
+@include keyframes(intro-to-detail) {
+    0% {
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}

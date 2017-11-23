@@ -1,0 +1,84 @@
+@import "../mixins";
+@import "../breakpoints";
+
+.inputGroup{
+    &.big {
+        color: $gray;
+        font-size: 20px;
+    }
+    &.medium {
+        color: $gray;
+        font-size: 18px;
+    }
+    &.small {
+        color: $light-gray;
+        font-size: 14px;
+    }
+    &.theme {
+        color: $gray;
+        font-size: 14px;
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin: 0px auto 5px;
+            &.aventura {
+                background-image: icon(aventura, $gray);
+            }
+            &.fantasia {
+                background-image: icon(fantasia, $gray);
+            }
+            &.terror {
+                background-image: icon(terror, $gray);
+            }
+            &.novela {
+                background-image: icon(novela, $gray);
+            }
+            &.amor {
+                background-image: icon(amor, $gray);
+            }
+            &.infantil {
+                background-image: icon(infantil, $gray);
+            }
+        }
+    }
+    .label{
+        width: 100%;
+        @include ellipsis();
+    }
+    @include all-mobile {
+        &.big {
+            font-size: 16px;
+        }
+        &.medium {
+            font-size: 14px;
+        }
+        &.small {
+            font-size: 12px;
+        }
+        &.theme {
+            font-size: 14px;
+            .icon {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+input, select{
+    color: $light-gray;
+    font-size: 12px;
+    padding: 0 8px;
+    width: 370px;
+    height: 20px;
+    @include rounded(3px);
+    background-color: $white;
+    border: solid 1px $carto;
+    @include transition(border-color .3s ease-in-out);
+    &:focus,
+    &:active {
+        border-color: $blue;
+    }
+}
+select{
+    width: 100px;
+}
